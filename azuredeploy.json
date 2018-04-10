@@ -58,10 +58,11 @@
     },
     "openTsdbVersion": {
       "type": "string",
-      "defaultValue": "2.3.0",
+      "defaultValue": "2.4.0RC2",
       "allowedValues": [
         "2.2.0",
-        "2.3.0"
+        "2.3.0",
+        "2.4.0RC2"
       ]
     },
     "openTsdbTopology": {
