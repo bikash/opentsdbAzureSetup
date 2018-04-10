@@ -1,7 +1,7 @@
 {
     "serviceName": "OPENTSDB",
     "displayName": "OpenTSDB",
-    "package": "https://github.com/dnvglresearch/tsdb_backend/raw/master/ingest/files/azure.tar.gz",
+    "package": "https://github.com/bikash/opentsdbAzureSetup/raw/master/services/OPENTSDB.tar.gz",
     "metrics": true,
     "iframeViewer": true,
     "components": {

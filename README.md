@@ -2,7 +2,7 @@
 
 This template creates a new HDInsight HBase cluster with OpenTSDB installed and deployed + 1 edge node to act as an external proxy
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https://raw.githubusercontent.com/dnvglresearch/tsdb_backend/master/ingest/azure/azuredeploy.json?token=AAJMbVjfJjAvUX4gtzm_adqLEV9dQ8wyks5a1fH4wA%3D%3D" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https://raw.githubusercontent.com/bikash/opentsdbAzureSetup/master/azuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
