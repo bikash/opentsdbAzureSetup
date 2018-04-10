@@ -2,8 +2,7 @@
 
 This template creates a new HDInsight HBase cluster with OpenTSDB installed and deployed + 1 edge node to act as an external proxy
 
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https://raw.githubusercontent.com/bikash/opentsdbAzureSetup/master/azuredeploy.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fbikash%2FopentsdbAzureSetup%2Fmaster%2Fazuredeploy.json" rel="nofollow"><img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
 OpenTSDB ([http://opentsdb.net/](http://opentsdb.net/)) is a high performance, open source storage engine that allows users to 'Store and serve massive amounts of time series data without losing granularity.'.
