@@ -12,7 +12,7 @@ if [ `test_is_headnode` == 0 ]; then
 fi
 
 # In case Spark is installed, exit.
-if [ -e /usr/hdp/current/spark2 ]; then
+if [ -e /usr/hdp/current/spark2-client ]; then
     echo "Spark is already installed, exiting ..."
     exit 0
 fi
@@ -22,21 +22,21 @@ download_file http://apache.cs.utah.edu/spark/spark-2.2.1/spark-2.2.1-bin-hadoop
 
 # Untar the Spark binary and move it to proper location.
 untar_file /tmp/spark-2.2.1-bin-hadoop2.7.tgz /usr/hdp/current
-mv /usr/hdp/current/spark-2.2.1-bin-hadoop2.7 /usr/hdp/current/spark2
+mv /usr/hdp/current/spark-2.2.1-bin-hadoop2.7 /usr/hdp/current/spark2-client
 
 # Remove the temporary file downloaded.
 rm -f /tmp/spark-2.2.1-bin-hadoop2.7.tgz
 
 # Override necessary files to make Spark work on HDInsight.
-download_file https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-defaults.conf /usr/hdp/current/spark2/conf/spark-defaults.conf
+download_file https://hdiconfigactions.blob.core.windows.net/linuxsparkconfigactionv02/spark-defaults.conf /usr/hdp/current/spark2-client/conf/spark-defaults.conf
 hdpversion=$(ls /usr/hdp | egrep ^[-.0-9]+)
-sed -i "s|HDPVERSIONPLACEHOLDER|$hdpversion|g" /usr/hdp/current/spark2/conf/spark-defaults.conf
+sed -i "s|HDPVERSIONPLACEHOLDER|$hdpversion|g" /usr/hdp/current/spark2-client/conf/spark-defaults.conf
 
 # Add HADOOP environment variable into machine level configuration.
 echo "HADOOP_CONF_DIR=/etc/hadoop/conf" | sudo tee -a /etc/environment
 echo "YARN_CONF_DIR=/etc/hadoop/conf" | sudo tee -a /etc/environment
 echo "SPARK_DIST_CLASSPATH=$(hadoop classpath)" | sudo tee -a /etc/environment
-ln -s /etc/hive/conf/hive-site.xml /usr/hdp/current/spark2/conf
+ln -s /etc/hive/conf/hive-site.xml /usr/hdp/current/spark2-client/conf
 
 # Updating existing symbolic links and cleanup existing spark binaries
 rm -r /usr/bin/pyspark
@@ -47,5 +47,5 @@ rm -r /usr/bin/spark-submit
 rm -rf /usr/hdp/current/spark2-client
 
 # Updating PATH with spark bin
-NEWPATH=$PATH:/usr/hdp/current/spark2/bin
+NEWPATH=$PATH:/usr/hdp/current/spark2-client/bin
 sed -i "s|^PATH=.*|PATH=\"$NEWPATH\"|g" /etc/environment
