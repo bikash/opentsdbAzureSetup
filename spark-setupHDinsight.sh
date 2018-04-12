@@ -26,20 +26,15 @@ sudo ln -s /usr/hdp/current/spark2-client /usr/hdp/current/spark-client
 #bash Anaconda2-5.1.0-Linux-x86_64.sh
 
 #export PATH=/home/sshuser/anaconda2/bin:$PATH
-
 echo "export SPARK_HOME=/usr/hdp/current/spark2-client" >> /home/sshuser/.bashrc
-
 echo "export PYTHONPATH=$SPARK_HOME/python/:$PYTHONPATH" >> /home/sshuser/.bashrc
 echo "export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.3-src.zip:$PYTHONPATH" >> /home/sshuser/.bashrc
-
-
 echo "export PYSPARK_PYTHON=/usr/bin/python" >> /home/sshuser/.bashrc
 #export PYTHONPATH=/usr/hdp/current/spark2-client/python/lib/pyspark.zip:/usr/hdp/current/spark2-client/python/lib/py4j-0.10.3-src.zip
 
 pip install --upgrade pip
 pip install pandas
 pip install requests
-
 
 # Updating PATH with spark bin
 NEWPATH=$PATH:/usr/hdp/current/spark2-client/bin
