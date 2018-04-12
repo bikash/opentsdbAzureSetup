@@ -28,6 +28,7 @@ sudo ln -s /usr/hdp/current/spark2-client /usr/hdp/current/spark-client
 export PYSPARK_PYTHON=/usr/bin/python
 export PYTHONPATH=/usr/hdp/current/spark2-client/python/lib/pyspark.zip:/usr/hdp/current/spark2-client/python/lib/py4j-0.10.3-src.zip
 
+pip install --upgrade pip
 pip install pandas
 pip install requests
 
