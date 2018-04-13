@@ -22,7 +22,6 @@ echo "export PYTHONPATH=$SPARK_HOME/python/lib/py4j-0.10.3-src.zip:$PYTHONPATH" 
 echo "export PYSPARK_PYTHON=/usr/bin/python" >> /home/sshuser/.bashrc
 #export PYTHONPATH=/usr/hdp/current/spark2-client/python/lib/pyspark.zip:/usr/hdp/current/spark2-client/python/lib/py4j-0.10.3-src.zip
 
-
 pip install --upgrade pip
 
 # Updating PATH with spark bin
